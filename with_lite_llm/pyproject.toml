@@ -1,0 +1,23 @@
+[project]
+name = "with-lite-llm"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Muhammad Asif", email = "programmerasif@outlook.com" }
+]
+requires-python = ">=3.11"
+dependencies = [
+    "litellm>=1.67.2",
+    "openai-agents>=0.0.13",
+    "python-dotenv>=1.1.0",
+]
+
+[project.scripts]
+with-lite-llm = "with_lite_llm:main"
+
+
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
