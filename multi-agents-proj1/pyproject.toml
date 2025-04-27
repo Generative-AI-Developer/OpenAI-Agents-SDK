@@ -1,0 +1,21 @@
+[project]
+name = "multi-agents-proj1"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Muhammad Asif", email = "programmerasif@outlook.com" }
+]
+requires-python = ">=3.11"
+dependencies = [
+    "python-dotenv>=1.1.0",
+    "litellm>=1.67.2",
+    "openai-agents>=0.0.13",
+]
+
+[project.scripts]
+multi-agents-proj1 = "multi_agents_proj1:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
