@@ -581,6 +581,7 @@ dependencies = [
     { name = "litellm" },
     { name = "openai-agents" },
     { name = "python-dotenv" },
+    { name = "uvicorn" },
 ]
 
 [package.metadata]
@@ -588,6 +589,7 @@ requires-dist = [
     { name = "litellm", specifier = ">=1.67.2" },
     { name = "openai-agents", specifier = ">=0.0.13" },
     { name = "python-dotenv", specifier = ">=1.1.0" },
+    { name = "uvicorn", specifier = ">=0.34.2" },
 ]
 
 [[package]]
