@@ -1,8 +1,8 @@
+import chainlit as cl
 import os
 from dotenv import load_dotenv
 from agents import Agent, Runner, AsyncOpenAI, OpenAIChatCompletionsModel
 from agents.run import RunConfig
-import asyncio
 
 # Load the environment variables from the .env file
 load_dotenv()
@@ -31,19 +31,21 @@ config = RunConfig(
 )
 
 
-async def main():
-    agent = Agent(
+
+agent = Agent(
         name="Assistant",
         instructions="You are helpful Assistent.",
         model=model
-    )
+)
+    
 
-    result = await Runner.run(agent, "Tell me about recursion in programming.", run_config=config)
-    print(result.final_output)
-    # Function calls itself,
-    # Looping in smaller pieces,
-    # Endless by design.
+# result = Runner.run_sync(agent, "What is capital of France..", run_config=config)
+# print(result.final_output)
+#     # Function calls itself,
+#     # Looping in smaller pieces,
+#     # Endless by design.
 
-
-if __name__ == "__main__":
-    asyncio.run(main())
+@cl.on_message
+async def handle_message(message: cl.Message):
+    result = await Runner.run(agent, input = message.content, run_config=config)
+    await cl.Message(content = result.final_output).send()
