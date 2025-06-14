@@ -1,0 +1,20 @@
+[project]
+name = "basic-agent"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Muhammad Asif", email = "programmerasif@outlook.com" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "litellm>=1.72.4",
+    "openai-agents>=0.0.17",
+]
+
+[project.scripts]
+basic-agent = "basic_agent:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
