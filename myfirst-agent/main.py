@@ -14,24 +14,29 @@ if not gemini_api_key:
     raise ValueError("GEMINI_API_KEY is not set. Please ensure it is defined in your .env file.")
 
 #Reference: https://ai.google.dev/gemini-api/docs/openai
-external_client = AsyncOpenAI(
+
+
+#Step 1 Provider
+provider = AsyncOpenAI(
     api_key=gemini_api_key,
     base_url="https://generativelanguage.googleapis.com/v1beta/openai/",
 )
 
+#Step 2 Model
 model = OpenAIChatCompletionsModel(
     model="gemini-2.0-flash",
-    openai_client=external_client
+    openai_client=provider
 )
 
+# Config defined at Run level
 config = RunConfig(
     model=model,
-    model_provider=external_client,
+    model_provider=provider,
     tracing_disabled=True
 )
 
 
-
+# Step 3 Agent
 agent = Agent(
         name="Assistant",
         instructions="You are helpful Assistent.",
