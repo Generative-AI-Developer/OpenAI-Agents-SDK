@@ -1,22 +1,22 @@
 [project]
-name = "myfirst-agent"
+name = "handsoff"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
 authors = [
     { name = "Muhammad Asif", email = "programmerasif@outlook.com" }
 ]
-requires-python = ">=3.13"
+requires-python = ">=3.11"
 dependencies = [
-    "chainlit>=2.5.5",
-    "litellm>=1.73.6",
-    "openai-agents>=0.0.16",
+    "litellm>=1.67.2",
+    "openai-agents>=0.0.13",
     "python-dotenv>=1.1.0",
 ]
 
 [project.scripts]
-myfirst-agent = "myfirst_agent:main"
-myfirst-agent1 = "myfirst_agent.main:main"
+with-lite-llm = "with_lite_llm:main"
+
+
 
 [build-system]
 requires = ["hatchling"]

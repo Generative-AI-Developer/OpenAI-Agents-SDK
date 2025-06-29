@@ -6,10 +6,10 @@ readme = "README.md"
 authors = [
     { name = "Muhammad Asif", email = "programmerasif@outlook.com" }
 ]
-requires-python = ">=3.13"
+
+requires-python = ">=3.11"
 dependencies = [
-    "litellm>=1.72.4",
-    "openai-agents>=0.0.17",
+    "openai-agents[litellm]>=0.0.13",
 ]
 
 [project.scripts]

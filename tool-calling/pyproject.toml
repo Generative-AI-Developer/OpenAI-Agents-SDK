@@ -1,22 +1,19 @@
 [project]
-name = "myfirst-agent"
+name = "tool-calling"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
 authors = [
     { name = "Muhammad Asif", email = "programmerasif@outlook.com" }
 ]
-requires-python = ">=3.13"
+requires-python = ">=3.12"
 dependencies = [
-    "chainlit>=2.5.5",
-    "litellm>=1.73.6",
-    "openai-agents>=0.0.16",
-    "python-dotenv>=1.1.0",
+    "litellm>=1.72.6",
+    "openai-agents>=0.0.17",
 ]
 
 [project.scripts]
-myfirst-agent = "myfirst_agent:main"
-myfirst-agent1 = "myfirst_agent.main:main"
+tool-calling = "tool_calling:main"
 
 [build-system]
 requires = ["hatchling"]
