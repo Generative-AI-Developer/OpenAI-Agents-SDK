@@ -5,7 +5,7 @@ import asyncio
 from agents import Agent, Runner, function_tool, set_tracing_disabled
 from agents.extensions.models.litellm_model import LitellmModel
 from agents import enable_verbose_stdout_logging
-
+from agents.extensions.visualization import draw_graph
 set_tracing_disabled(disabled=True)
 enable_verbose_stdout_logging()
 
@@ -46,5 +46,7 @@ async def main(input: str):
     result = await Runner.run(triage_agent, input=input)
     print(result.final_output)
     print(result.last_agent.name)
+    draw_graph(triage_agent)
 asyncio.run(main("what is weather is Peshawar"))
+
 
